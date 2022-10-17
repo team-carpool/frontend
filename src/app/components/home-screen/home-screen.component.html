@@ -1,0 +1,30 @@
+<mat-drawer-container>
+    <mat-drawer-content class="search-box">
+        <div class="mat-elevation-z4 min-h-[200px] content-center text-center p-2 ">
+            <!-- create from to destination two input fields  -->
+            <mat-form-field appearance="outline" class="w-[90%]">
+                <mat-label>From</mat-label>
+                <input matInput placeholder="From" />
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="w-[90%]">
+                <mat-label>To</mat-label>
+                <input matInput placeholder="To" />
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="w-[90%]">
+                <mat-label>Time</mat-label>
+                <input matInput placeholder="Time" />
+            </mat-form-field>
+            <div>
+                <button mat-raised-button color="primary">Search</button>
+            </div>
+        </div>
+    </mat-drawer-content>
+
+    <mat-drawer-content class=" map-box overflow-x-hidden m-5">
+
+        <div class="content mat-elevation-z4">
+            <app-map></app-map>
+        </div>
+    </mat-drawer-content>
+
+</mat-drawer-container>

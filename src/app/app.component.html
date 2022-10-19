@@ -1,0 +1,17 @@
+<mat-toolbar color="primary" class="flex justify-between">
+  <div>
+    <span>car pool</span>
+  </div>
+
+  <div class="flex">
+    <button mat-button routerLink="/">Home</button>
+    <button mat-button routerLink="/about">About</button>
+  </div>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav-content>
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

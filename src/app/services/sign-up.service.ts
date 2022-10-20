@@ -9,6 +9,6 @@ export class SignUpService {
   constructor(private httpClient: HttpClient) {}
 
   signUp(signup: UserSignup) {
-    return this.httpClient.post('127.0.0.1:8080/users/signup', signup);
+    return this.httpClient.post('http://localhost:8080/users/signup', signup);
   }
 }

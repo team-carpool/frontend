@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
@@ -21,6 +23,8 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {
         path: '',
@@ -28,7 +32,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
         children: [{ path: 'map', component: MapComponent }],
       },
       { path: 'about', component: AboutScreenComponent },
-      { path: 'sign-up', component: SignUpComponent },
+      { path: 'signup', component: SignUpComponent },
     ]),
     BrowserAnimationsModule,
     AngularMaterialModule,

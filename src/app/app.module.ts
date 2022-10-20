@@ -9,6 +9,7 @@ import { AngularMaterialModule } from './modules/angular-material/angular-materi
 import { HomeScreenComponent } from './components/home-screen/home-screen.component';
 import { AboutScreenComponent } from './components/about-screen/about-screen.component';
 import { MapComponent } from './components/map/map.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { MapComponent } from './components/map/map.component';
     HomeScreenComponent,
     AboutScreenComponent,
     MapComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,6 +28,7 @@ import { MapComponent } from './components/map/map.component';
         children: [{ path: 'map', component: MapComponent }],
       },
       { path: 'about', component: AboutScreenComponent },
+      { path: 'sign-up', component: SignUpComponent },
     ]),
     BrowserAnimationsModule,
     AngularMaterialModule,

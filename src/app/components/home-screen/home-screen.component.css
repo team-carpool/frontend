@@ -8,8 +8,8 @@
   margin: 16px;
   width: 210px;
   border-right: none;
-  background: #002b5c;
-  color: white;
+  /* background: #002b5c; */
+  /* color: rgb(4, 4, 4); */
   border-radius: 10px;
   padding: 16px;
   text-align: center;
@@ -61,6 +61,7 @@
   border-radius: 10px;
   min-height: 500px;
 }
+
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .mobileShow {

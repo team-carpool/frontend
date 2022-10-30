@@ -12,6 +12,7 @@ import { HomeScreenComponent } from './components/home-screen/home-screen.compon
 import { AboutScreenComponent } from './components/about-screen/about-screen.component';
 import { MapComponent } from './components/map/map.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     AboutScreenComponent,
     MapComponent,
     SignUpComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
       },
       { path: 'about', component: AboutScreenComponent },
       { path: 'signup', component: SignUpComponent },
+      { path: '**', component: NotFoundComponent },
     ]),
     BrowserAnimationsModule,
     AngularMaterialModule,

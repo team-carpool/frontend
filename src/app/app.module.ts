@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
+import {NgxLeafletLocateModule} from '@runette/ngx-leaflet-locate'
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
 import { HomeScreenComponent } from './components/home-screen/home-screen.component';
@@ -19,6 +21,7 @@ import { MapComponent } from './components/map/map.component';
   ],
   imports: [
     BrowserModule,
+    NgxLeafletLocateModule,
     RouterModule.forRoot([
       {
         path: '',

@@ -1,5 +1,6 @@
 import { Component, AfterViewInit  } from '@angular/core';
 import * as L from 'leaflet';
+import { latLng, Map, Control, LocationEvent } from 'leaflet';
 
 @Component({
   selector: 'app-map',
@@ -14,7 +15,19 @@ export class MapComponent implements AfterViewInit  {
     this.initMap();
   }
 
-  map:any;
+  public map:Map;
+
+  public locateOptions:  Control.LocateOptions = {
+    flyTo: false,
+    keepCurrentZoomLevel: true,
+    locateOptions: {
+                 enableHighAccuracy: true,
+               },
+    icon: 'leaflet-control-locate-location-arrow',
+    clickBehavior: {inView: 'stop',
+                    outOfView: 'setView',
+                    inViewNotFollowing: 'setView'}
+  };
 
   private initMap(): void {
     this.map = L.map('map', {
@@ -29,6 +42,10 @@ export class MapComponent implements AfterViewInit  {
     });
 
     tiles.addTo(this.map);
+  }
+
+  onNewLocation(e: LocationEvent){
+
   }
 
 }

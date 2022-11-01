@@ -1,6 +1,9 @@
 import { Component, AfterViewInit  } from '@angular/core';
+
 import * as L from 'leaflet';
 import { latLng, Map, Control, LocationEvent } from 'leaflet';
+
+import { TravelPlanService } from 'src/app/services/travel-plan.service';
 
 @Component({
   selector: 'app-map',
@@ -9,7 +12,7 @@ import { latLng, Map, Control, LocationEvent } from 'leaflet';
 })
 export class MapComponent implements AfterViewInit  {
 
-  constructor() { }
+  constructor(private travelService: TravelPlanService) { }
 
   ngAfterViewInit (): void {
     this.initMap();
@@ -45,7 +48,7 @@ export class MapComponent implements AfterViewInit  {
   }
 
   onNewLocation(e: LocationEvent){
-
+    console.log(e.latlng);
   }
 
 }

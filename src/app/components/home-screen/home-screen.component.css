@@ -6,7 +6,7 @@
 
 .mat-drawer {
   margin: 16px;
-  width: 210px;
+  width: calc(auto - 65px);
   border-right: none;
   /* background: #002b5c; */
   /* color: rgb(4, 4, 4); */

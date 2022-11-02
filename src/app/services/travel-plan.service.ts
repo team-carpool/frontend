@@ -8,7 +8,8 @@ export class TravelPlanService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public updateCurrentLoc(coordinate: String){
-    this.httpClient.post('http://localhost:8080/travel/currentloc', coordinate);
+  public updateCurrentUserLoc(coord: String){
+    console.log(coord);
+    return this.httpClient.post('http://localhost:8080/travel/currentloc', coord);
   }
 }

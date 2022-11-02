@@ -32,10 +32,12 @@ export class MapComponent implements AfterViewInit  {
                     inViewNotFollowing: 'setView'}
   };
 
+  private currentUserCoord = "0,0";
+
   private initMap(): void {
     this.map = L.map('map', {
-      center: [ 39.8282, -98.5795 ],
-      zoom: 3
+      center: [ 25.6370210, 85.9089743 ],
+      zoom: 13
     });
 
     const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -48,7 +50,21 @@ export class MapComponent implements AfterViewInit  {
   }
 
   onNewLocation(e: LocationEvent){
-    console.log(e.latlng);
+    // console.log(e.latlng);
+    var lat = new String(e.latlng.lat);
+    var lng = new String(e.latlng.lng);
+    var coord = this.buildCoord(lat, lng);
+
+    if(!(coord===this.currentUserCoord)){
+      this.currentUserCoord = coord;
+      this.travelService.updateCurrentUserLoc(coord).subscribe((res)=>{
+        console.log(res);
+      });
+    }
+  }
+
+  private buildCoord(lat: any, lng: any): string{
+    return lat+","+lng;
   }
 
 }

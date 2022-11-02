@@ -2,6 +2,7 @@ import { Component, AfterViewInit  } from '@angular/core';
 
 import * as L from 'leaflet';
 import { latLng, Map, Control, LocationEvent } from 'leaflet';
+import 'leaflet-routing-machine';
 
 import { TravelPlanService } from 'src/app/services/travel-plan.service';
 
@@ -21,8 +22,8 @@ export class MapComponent implements AfterViewInit  {
   public map:Map;
 
   public locateOptions:  Control.LocateOptions = {
-    flyTo: false,
-    keepCurrentZoomLevel: true,
+    flyTo: true,
+    // keepCurrentZoomLevel: true,
     locateOptions: {
                  enableHighAccuracy: true,
                },
@@ -65,6 +66,24 @@ export class MapComponent implements AfterViewInit  {
 
   private buildCoord(lat: any, lng: any): string{
     return lat+","+lng;
+  }
+
+  public getRoute(){
+    L.Routing.control({
+      router: L.Routing.osrmv1({
+          serviceUrl: `http://router.project-osrm.org/route/v1/`
+      }),
+      showAlternatives: true,
+      // lineOptions: {extendToWaypoints: false, missingRouteTolerance: 0, styles: [{color: '#242c81', weight: 7}]},
+      fitSelectedRoutes: true,
+      // altLineOptions: {extendToWaypoints: false, missingRouteTolerance: 0, styles: [{color: '#ed6852', weight: 7}]},
+      // show: false,
+      routeWhileDragging: true,
+      waypoints: [
+          L.latLng(57.74, 11.94),
+          L.latLng(57.6792, 11.949)
+      ]
+    }).addTo(this.map);
   }
 
 }

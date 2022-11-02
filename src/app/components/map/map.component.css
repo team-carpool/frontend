@@ -8,3 +8,7 @@
     height: 80vh;
     width: 100%;
 }
+
+.leaflet-shadow-pane img{
+    src: url(../../../assets/map/marker-shadow.png);
+}

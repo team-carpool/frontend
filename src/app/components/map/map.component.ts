@@ -4,6 +4,7 @@ import * as L from 'leaflet';
 import { latLng, Map, Control, LocationEvent } from 'leaflet';
 import 'leaflet-routing-machine';
 
+import { MapService } from 'src/app/services/map.service';
 import { TravelPlanService } from 'src/app/services/travel-plan.service';
 
 @Component({
@@ -13,9 +14,10 @@ import { TravelPlanService } from 'src/app/services/travel-plan.service';
 })
 export class MapComponent implements AfterViewInit  {
 
-  constructor(private travelService: TravelPlanService) { }
+  constructor(private travelService: TravelPlanService, private mapService: MapService) { }
 
   ngAfterViewInit (): void {
+    // console.log(this.mapService.getIpLoc());
     this.initMap();
   }
 

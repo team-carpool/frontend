@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MapService } from 'src/app/services/map.service';
 import { MapComponent } from '../map/map.component';
 
 @Component({
@@ -10,7 +11,7 @@ export class HomeScreenComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MapComponent) mapComp: MapComponent;
 
-  constructor() { }
+  constructor(private mapService: MapService) { }
 
   ngOnInit(): void {
   }
@@ -21,6 +22,10 @@ export class HomeScreenComponent implements OnInit, AfterViewInit {
 
   public route(){
     this.mapComp.getRoute();
+  }
+
+  public searchTo(query: string){
+    this.mapService.searchLoc(query);
   }
 
 }

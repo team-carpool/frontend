@@ -54,14 +54,14 @@
             </mat-form-field>
             <mat-form-field appearance="outline" class="w-[90%]">
                 <mat-label>To</mat-label>
-                <input matInput placeholder="To" />
+                <input #toLoc matInput placeholder="To" />
             </mat-form-field>
             <mat-form-field appearance="outline" class="w-[90%]">
                 <mat-label>Time</mat-label>
                 <input matInput type="time" placeholder="Time" />
             </mat-form-field>
             <div>
-                <button mat-raised-button color="primary" (click)="route()">Search</button>
+                <button mat-raised-button color="primary" (click)="searchTo(toLoc.value)">Search</button>
             </div>
         </div>
     </mat-drawer>

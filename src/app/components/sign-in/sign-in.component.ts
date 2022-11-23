@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { UserSignin } from 'src/app/models/signup-signin/user-signin.model';
 import { SigninService } from 'src/app/services/sign-in/signin.service';
+import { SignUpComponent } from '../sign-up/sign-up.component';
 
 @Component({
   selector: 'app-sign-in',
@@ -15,9 +17,15 @@ export class SignInComponent implements OnInit {
 
   constructor(
     private signinService: SigninService,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {}
+
+  openDialog() {
+    this.dialog.closeAll();
+    this.dialog.open(SignUpComponent);
+  }
 
   onSubmit() {
     this.signinService.signIn(this.signin).subscribe((data) => {

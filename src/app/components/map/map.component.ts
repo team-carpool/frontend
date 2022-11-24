@@ -35,7 +35,7 @@ export class MapComponent implements AfterViewInit  {
                     inViewNotFollowing: 'setView'}
   };
 
-  private currentUserCoord = "0,0";
+  private currentUserCoord = "";
 
   private initMap(): void {
     this.map = L.map('map', {
@@ -70,7 +70,13 @@ export class MapComponent implements AfterViewInit  {
     return lat+","+lng;
   }
 
-  public getRoute(){
+  public getRoute(destination: any){
+    var source = this.currentUserCoord.split(",");
+    if(source.length<2){
+      alert("Please turn on GPS");
+      return;
+    }
+
     L.Routing.control({
       router: L.Routing.osrmv1({
           serviceUrl: `http://router.project-osrm.org/route/v1/`
@@ -82,8 +88,8 @@ export class MapComponent implements AfterViewInit  {
       // show: false,
       routeWhileDragging: true,
       waypoints: [
-          L.latLng(57.74, 11.94),
-          L.latLng(57.6792, 11.949)
+          L.latLng(Number(source[0]), Number(source[1])),
+          L.latLng(Number(destination.lat), Number(destination.lon))
       ]
     }).addTo(this.map);
   }

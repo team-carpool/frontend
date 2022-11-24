@@ -5,6 +5,10 @@
 }
 
 #map{
-    height: 80vh;
+    height: 84.5vh;
     width: 100%;
+}
+
+.leaflet-shadow-pane img{
+    src: url(../../../assets/map/marker-shadow.png);
 }

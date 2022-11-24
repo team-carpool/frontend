@@ -18,7 +18,7 @@
             <!-- create from to destination two input fields  -->
             <mat-form-field appearance="outline" class="w-[90%]">
                 <mat-label>From</mat-label>
-                <input matInput placeholder="From" />
+                <input matInput placeholder="Source location is fixed as current location | Don't fill" />
             </mat-form-field>
             
             <mat-form-field class="example-full-width" appearance="fill">
@@ -51,7 +51,7 @@
 
     </mat-drawer>
 
-    <mat-drawer-content class="overflow-x-hidden m-5">
+    <mat-drawer-content class="overflow-x-hidden ">
         <button (click)="drawer.toggle()" type="button" mat-button color="primary">
             <mat-icon *ngIf="!drawer.opened">menu</mat-icon>
         </button>

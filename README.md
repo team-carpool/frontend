@@ -31,4 +31,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - build path should be ```/docs```
 - base href in ```docs/index.html``` should be empty string "" not "/"
 - 404.html should be included
-- 404.css should br included
+- 404.css should be included
+- rename marker icon file name in ```/docs/marker-icon.png```

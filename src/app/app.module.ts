@@ -4,7 +4,10 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { HttpClientModule } from '@angular/common/http';
+
+import {NgxLeafletLocateModule} from '@runette/ngx-leaflet-locate'
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './models/angular-material/angular-material.module';
@@ -27,7 +30,9 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
   ],
   imports: [
     BrowserModule,
+    NgxLeafletLocateModule,
     FormsModule,
+    MatAutocompleteModule,
     HttpClientModule,
     RouterModule.forRoot([
       {

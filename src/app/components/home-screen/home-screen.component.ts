@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Observable } from 'rxjs';
 import { MapService } from 'src/app/services/map.service';
 import { MapComponent } from '../map/map.component';
 
@@ -20,12 +21,18 @@ export class HomeScreenComponent implements OnInit, AfterViewInit {
       
   }
 
+  destinationSearch: any;
+
   public route(){
     this.mapComp.getRoute();
   }
 
   public searchTo(query: string){
-    this.mapService.searchLoc(query);
+    this.mapService.searchLoc(query).subscribe((res)=>{
+      this.destinationSearch = res;
+      console.log(this.destinationSearch);
+    });
+    
   }
 
 }

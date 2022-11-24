@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { HttpClientModule } from '@angular/common/http';
 
 import {NgxLeafletLocateModule} from '@runette/ngx-leaflet-locate'
@@ -29,6 +30,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     BrowserModule,
     NgxLeafletLocateModule,
     FormsModule,
+    MatAutocompleteModule,
     HttpClientModule,
     RouterModule.forRoot([
       {

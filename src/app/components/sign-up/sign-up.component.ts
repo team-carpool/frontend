@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UserSignup } from 'src/app/models/user-signup.model';
-import { SignUpService } from '../../services/sign-up.service';
+import { MatDialog } from '@angular/material/dialog';
+import { UserSignup } from 'src/app/models/signup-signin/user-signup.model';
+import { SignUpService } from '../../services/sign-up/sign-up.service';
+import { SignInComponent } from '../sign-in/sign-in.component';
 
 @Component({
   selector: 'app-sign-up',
@@ -15,9 +17,17 @@ export class SignUpComponent implements OnInit {
     password: '',
   };
 
-  constructor(private signupService: SignUpService) {}
+  constructor(
+    private signupService: SignUpService,
+    private dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {}
+
+  openDialog() {
+    this.dialog.closeAll();
+    this.dialog.open(SignInComponent);
+  }
 
   onSubmit() {
     this.signupService.signUp(this.signup).subscribe((data) => {

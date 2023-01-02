@@ -4,10 +4,10 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { HttpClientModule } from '@angular/common/http';
 
-import {NgxLeafletLocateModule} from '@runette/ngx-leaflet-locate'
+import { NgxLeafletLocateModule } from '@runette/ngx-leaflet-locate';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './models/angular-material/angular-material.module';
@@ -17,6 +17,7 @@ import { MapComponent } from './components/map/map.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
     SignUpComponent,
     NotFoundComponent,
     SignInComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
         children: [{ path: 'map', component: MapComponent }],
       },
       { path: 'about', component: AboutScreenComponent },
+      { path: 'chat', component: ChatComponent },
       { path: '**', component: NotFoundComponent },
     ]),
     BrowserAnimationsModule,

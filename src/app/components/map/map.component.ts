@@ -79,7 +79,7 @@ export class MapComponent implements AfterViewInit  {
 
     L.Routing.control({
       router: L.Routing.osrmv1({
-          serviceUrl: `http://router.project-osrm.org/route/v1/`
+          serviceUrl: `https://router.project-osrm.org/route/v1/`
       }),
       showAlternatives: true,
       // lineOptions: {extendToWaypoints: false, missingRouteTolerance: 0, styles: [{color: '#242c81', weight: 7}]},

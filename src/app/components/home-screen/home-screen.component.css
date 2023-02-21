@@ -65,10 +65,10 @@
   display: grid;
   justify-content: center;
   align-items: center;
-  height: 0vh;
 } 
 
 .switch-container {
+  margin-left: 2vw;
   width: 5rem;
   height: 2.5rem;
   border-radius: 5rem;
@@ -110,7 +110,7 @@ label {
 }
 
 #switch:checked ~ .switch-color {
-  background: #49e600;
+  background: #a5f97e;
 }
 
 #switch ~ label {

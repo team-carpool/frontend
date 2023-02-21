@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms'
 
 import { MapService } from 'src/app/services/map.service';
 import { MapComponent } from '../map/map.component';
@@ -20,6 +21,12 @@ export class HomeScreenComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
       
   }
+
+  searchForm = new FormGroup({
+    source: new FormControl(''),
+    time: new FormControl(''),
+    isDriving: new FormControl('')
+  });
 
   destinationSearchList: any;
   destination: any;

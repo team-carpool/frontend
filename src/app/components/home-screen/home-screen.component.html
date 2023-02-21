@@ -14,11 +14,11 @@
         <p>Search</p>
         <mat-divider></mat-divider>
 
-        <div class="min-h-[200px] content-center text-center p-2 ">
+        <form [formGroup]="searchForm" class="min-h-[200px] content-center text-center p-2 " (ngSubmit)="route()">
             <!-- create from to destination two input fields  -->
             <mat-form-field appearance="outline" class="w-[90%]">
                 <mat-label>From</mat-label>
-                <input matInput placeholder="Source location is fixed as current location | Don't fill" />
+                <input matInput formControlName="source" placeholder="Source location is fixed as current location | Don't fill" />
             </mat-form-field>
             
             <mat-form-field class="example-full-width" appearance="fill">
@@ -41,19 +41,19 @@
 
             <mat-form-field appearance="outline" class="w-[90%]">
                 <mat-label>Time</mat-label>
-                <input matInput type="time" placeholder="Time" />
+                <input matInput type="time" formControlName="time" placeholder="Time" />
             </mat-form-field>
 
             <section class="switch-container">
-                <input type="checkbox" id='switch'>
+                <input type="checkbox" id='switch' formControlName="isDriving">
                 <label for="switch"> </label>
                 <div class="switch-color"></div>
             </section>
 
             <div>
-                <button mat-raised-button color="primary" (click)="route()">Search</button>
+                <button type="submit" mat-raised-button color="primary">Search</button>
             </div>
-        </div>
+        </form>
 
     </mat-drawer>
 

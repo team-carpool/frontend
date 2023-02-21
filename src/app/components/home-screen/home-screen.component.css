@@ -61,6 +61,78 @@
   width: 90%;
 }
 
+.switch-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 0vh;
+} 
+
+.switch-container {
+  width: 5rem;
+  height: 2.5rem;
+  border-radius: 5rem;
+  box-shadow: 1px 1px 1px 1px #cfd8dc;
+  position: relative;
+}
+
+.switch-container input {
+  display: none;
+}
+
+.switch-color {
+  width: 5.49em;
+  height: 2.7em;
+  left: .1em;
+  top: .1em;
+  background: #cfd8dc;
+  border-radius: 10em;
+  z-index: -1;
+  position: absolute;
+  transition: all 500ms cubic-bezier(0.34, 1.36, 0.2, 1);
+}
+
+label {
+  border-radius: 2em;
+  background-image: url('../../../assets/form/man.png');
+  background-size: 39px 39px;
+  width: 39px; 
+  height: 39px;
+  position: absolute;
+  top: .0em;
+  left: .087em;
+  z-index: 2;
+  cursor: pointer;
+}
+
+#switch:checked ~ label {
+  transform: translatex(2.9em) rotatez(360deg);
+}
+
+#switch:checked ~ .switch-color {
+  background: #49e600;
+}
+
+#switch ~ label {
+  transition: all 1s cubic-bezier(0.34, 1.36, 0.2, 1);
+}
+
+
+label::after {
+  content:"";
+  display: inline-block;
+
+}
+#switch:checked ~ label::after {
+  margin-top: 0.08em;
+  background-image: url('../../../assets/form/kindpng_726372.png');
+  background-size: 39px 39px;
+  width: 39px; 
+  height: 39px;
+  
+}
+
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .mobileShow {
     display: inline;

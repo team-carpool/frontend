@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import {NgxLeafletLocateModule} from '@runette/ngx-leaflet-locate'
 
@@ -17,6 +17,9 @@ import { MapComponent } from './components/map/map.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+
+import { LoadingInterceptor } from './interceptor/loading.interceptor'; 
 
 @NgModule({
   declarations: [
@@ -27,11 +30,13 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
     SignUpComponent,
     NotFoundComponent,
     SignInComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
     NgxLeafletLocateModule,
     FormsModule,
+    ReactiveFormsModule,
     MatAutocompleteModule,
     HttpClientModule,
     RouterModule.forRoot([
@@ -46,7 +51,11 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
     BrowserAnimationsModule,
     AngularMaterialModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true
+    }
+  ],
   bootstrap: [AppComponent],
   entryComponents: [SignInComponent, SignUpComponent],
 })

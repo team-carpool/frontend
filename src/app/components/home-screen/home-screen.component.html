@@ -59,12 +59,11 @@
     </mat-drawer>
 
     <mat-drawer-content class="overflow-x-hidden ">
-        <button (click)="drawer.toggle()" type="button" mat-button color="primary">
-            <mat-icon *ngIf="!drawer.opened">menu</mat-icon>
-        </button>
-
-        <div>
+        <section>
+            <button (click)="drawer.toggle()" type="button" mat-button color="primary" class="leaflet-bar leaflet-control hamburger">
+                <mat-icon *ngIf="!drawer.opened">menu</mat-icon>
+            </button>
             <app-map></app-map>
-        </div>
+        </section>
     </mat-drawer-content>
 </mat-drawer-container>

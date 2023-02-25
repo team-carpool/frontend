@@ -6,6 +6,6 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.leaflet-top {
-    margin-top: 50px !important;
+.leaflet-control-zoom {
+    margin-top: 5em !important;
 }

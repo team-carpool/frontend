@@ -13,7 +13,7 @@ export class SignUpComponent implements OnInit {
   signup: UserSignup = {
     firstName: '',
     lastName: '',
-    email: '',
+    emailId: '',
     password: '',
   };
 

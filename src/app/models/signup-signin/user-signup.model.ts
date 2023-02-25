@@ -3,6 +3,6 @@
 export interface UserSignup {
   firstName: string;
   lastName: string;
-  email: string;
+  emailId: string;
   password: string;
 }

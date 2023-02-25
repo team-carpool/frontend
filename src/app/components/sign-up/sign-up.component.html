@@ -29,7 +29,7 @@
 
                 <div class="p-1">
                     <label for="email-address" class="sr-only">Email address</label>
-                    <input [(ngModel)]="signup.email" id="email-address" name="email" type="email" autocomplete="email"
+                    <input [(ngModel)]="signup.emailId" id="email-address" name="email" type="email" autocomplete="email"
                         required
                         class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                         placeholder="Email address">
@@ -61,8 +61,8 @@
         </form>
         <!-- // account not avilable sign in  -->
         <div class="flex justify-center">
-            <p class="text-sm text-gray-600 hover:text-gray-500"> Already have an account? </p>
-            <a (click)="openDialog()" class="text-sm text-gray-600 hover:text-gray-500">
+            <p class="text-sm text-gray-600 hover:text-gray-500"> Already have an account? &nbsp; </p>
+            <a (click)="openDialog()" class="text-link">
                 Sign in
             </a>
         </div>

@@ -72,7 +72,7 @@
   width: 5rem;
   height: 2.5rem;
   border-radius: 5rem;
-  box-shadow: 1px 1px 1px 1px #cfd8dc;
+  /* box-shadow: 1px 1px 1px 1px #cfd8dc; */
   position: relative;
 }
 

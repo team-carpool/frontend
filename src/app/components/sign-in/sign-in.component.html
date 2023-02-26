@@ -43,10 +43,12 @@
             </div>
         </form>
         <!-- // account not avilable sign in  -->
-        <div class="flex justify-center">
-            <p class="text-sm text-gray-600 hover:text-gray-500"> Dont have an account? &nbsp; </p>
+        <div class="justify-center">
+            <div *ngIf="this.signinMessage.length!=0" class="error-txt">{{this.signinMessage}}</div>
+            <p class="text-sm text-gray-600 hover:text-gray-500"> Dont have an account?
             <a (click)="openDialog()" class="text-link">
                 Sign up
             </a>
+            </p>
         </div>
     </div>

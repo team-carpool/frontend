@@ -4,3 +4,11 @@
     font-weight: 500;
     border-bottom: 2px dashed grey;
 }
+
+.error-txt {
+    color: red;
+    font-weight: 450;
+    background-color: rgba(255, 0, 0, 0.13);
+    border-left: 2px solid red;
+    padding: 3px;
+}

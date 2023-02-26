@@ -15,6 +15,8 @@ export class SignInComponent implements OnInit {
     password: '',
   };
 
+  signinMessage = "";
+
   constructor(
     private signinService: SigninService,
     private dialog: MatDialog
@@ -29,7 +31,17 @@ export class SignInComponent implements OnInit {
 
   onSubmit() {
     this.signinService.signIn(this.signin).subscribe((data) => {
-      console.log(data);
+      if(data=="PASSWORD_MISSMATCH"){
+        this.signinMessage = "Password is invalid !";
+      }
+      else if(data!="USER_NOT_EXIST"){
+        this.signinService.saveToken(data);
+        this.dialog.closeAll();
+        this.signinMessage = "";
+      }
+      else{
+        this.signinMessage = "Email id or password is invalid !";
+      }
     });
   }
 }

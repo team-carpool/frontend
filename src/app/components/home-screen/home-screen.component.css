@@ -62,10 +62,10 @@
 }
 
 .hamburger {
-  position: fixed;
+  position: absolute;
   left: 0.7%;
-  top: 11%;
-  background-color: rgb(245, 245, 245);
+  top: 2%;
+  background-color: #fff !important;
 }
 
 .switch-container {

@@ -7,5 +7,15 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .leaflet-control-zoom {
+    display: none;
+    content-visibility: hidden !important;
+}
+
+.leaflet-control-locate {
     margin-top: 5em !important;
+}
+
+.primary-btn {
+    background-color: #5ec717;
+    color: #fff;
 }

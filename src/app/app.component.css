@@ -1,0 +1,20 @@
+.nav {
+    border-bottom: 1px solid #00000048;
+    background-color: #fff;
+    color: #000000;
+}
+
+.nav img {
+    width: 40%;
+    height: 40%;
+    display: inline-block;
+}
+
+.brand {
+    color: #5ec717;
+    font-weight: 500;
+}
+
+.nav-btn:hover {
+    background-color: #7af83179;
+}

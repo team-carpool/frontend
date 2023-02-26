@@ -1,13 +1,16 @@
-<mat-toolbar color="primary" class="flex justify-between">
+<mat-toolbar class="flex justify-between nav">
   <div>
     <span>
-      <a href="/">car pool</a>
+      <a href="/frontend">
+        <img src="../assets/logo.png" alt="Carpool">
+        <span class="brand">Carpool</span>
+      </a>
     </span>
   </div>
 
   <div class="flex">
-    <button mat-button (click)="openDialog()">Sign Up</button>
-    <button mat-button routerLink="/about">About</button>
+    <button class="nav-btn" mat-button (click)="openDialog()">Sign Up</button>
+    <button class="nav-btn" mat-button routerLink="/about">About</button>
   </div>
 </mat-toolbar>
 <app-spinner></app-spinner>

@@ -15,6 +15,10 @@
     font-weight: 550;
 }
 
+.brand-img img{
+    content: url(../assets/logo.png);
+}
+
 .nav-btn:hover {
     background-color: #7af83179;
 }

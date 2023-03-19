@@ -61,6 +61,13 @@
   width: 90%;
 }
 
+.hamburger {
+  position: absolute;
+  left: 0.7%;
+  top: 2%;
+  background-color: #fff !important;
+}
+
 .switch-container {
   display: grid;
   justify-content: center;

@@ -75,7 +75,7 @@ export class MapComponent implements AfterViewInit  {
       return;
     }
 
-    L.Routing.control({
+    let routeData = L.Routing.control({
       router: L.Routing.osrmv1({
           serviceUrl: `https://router.project-osrm.org/route/v1/`
       }),
@@ -89,7 +89,9 @@ export class MapComponent implements AfterViewInit  {
           L.latLng(Number(source[0]), Number(source[1])),
           L.latLng(Number(destination.lat), Number(destination.lon))
       ]
-    }).addTo(this.map);
+    });
+
+    routeData.addTo(this.map);
   }
 
 }

@@ -9,16 +9,35 @@ import { SigninService } from './sign-in/signin.service';
 export class TravelPlanService {
 
   constructor(private httpClient: HttpClient, private signinService: SigninService) { }
+  
+  currentloc: String = "";
+  token: AuthToken = this.signinService.authenticate();
 
   public updateCurrentUserLoc(coord: String){
     console.log(coord);
-    let token: AuthToken = this.signinService.authenticate();
-    if(token.isLoggedIn==true) {
-      let data = {'coord':coord, 'userId': token.userId};
+    this.currentloc = coord;
+    this.token = this.signinService.authenticate();
+    if(this.token.isLoggedIn==true) {
+      let data = {'coord':coord, 'userId': this.token.userId};
       return this.httpClient.post('https://backend-carpool.onrender.com/user/currentloc', data, {responseType:'text'}).subscribe(
         (res)=>{console.log(res)}
       );
     }
     return null;
   }
+
+  public sendUserTravelPlan(travelData: any) {
+    travelData.emailId = this.token.email;
+    travelData.vehicleNum = "BR1-1111";
+    travelData.travelDuration = 10;
+    if(travelData.source=="") {
+      travelData.source = this.currentloc;
+    }
+
+    this.httpClient.post('https://backend-carpool.onrender.com/travel/plan', travelData).subscribe(
+      (res)=>{console.log(res);}
+    );
+    
+  }
+
 }

@@ -60,9 +60,7 @@ export class MapComponent implements AfterViewInit  {
 
     if(!(coord===this.currentUserCoord)){
       this.currentUserCoord = coord;
-      this.travelService.updateCurrentUserLoc(coord).subscribe((res)=>{
-        console.log(res);
-      });
+      this.travelService.updateCurrentUserLoc(coord);
     }
   }
 

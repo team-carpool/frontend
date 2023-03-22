@@ -27,6 +27,8 @@ export class TravelPlanService {
   }
 
   public sendUserTravelPlan(travelData: any) {
+    if(this.token.isLoggedIn==undefined || this.token.isLoggedIn==false) return;
+
     travelData.emailId = this.token.email;
     travelData.vehicleNum = "BR1-1111";
     travelData.travelDuration = 10;

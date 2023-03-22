@@ -45,6 +45,7 @@ export class HomeScreenComponent implements OnInit, AfterViewInit {
     this.travelService.sendUserTravelPlan(travel_data);
 
     // get recommended co-passenger
+    
   }
 
   public searchTo(query: string){

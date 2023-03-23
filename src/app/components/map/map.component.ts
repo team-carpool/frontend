@@ -56,7 +56,7 @@ export class MapComponent implements AfterViewInit  {
     // console.log(e.latlng);
     var lat = new String(e.latlng.lat);
     var lng = new String(e.latlng.lng);
-    var coord = this.buildCoord(lat, lng);
+    var coord = this.buildCoord(lng, lat);
 
     if(!(coord===this.currentUserCoord)){
       this.currentUserCoord = coord;
@@ -64,8 +64,8 @@ export class MapComponent implements AfterViewInit  {
     }
   }
 
-  private buildCoord(lat: any, lng: any): string{
-    return lat+","+lng;
+  private buildCoord(lng: any, lat: any): string{
+    return lng+","+lat;
   }
 
   public getRoute(destination: any){
@@ -86,8 +86,8 @@ export class MapComponent implements AfterViewInit  {
       // show: false,
       routeWhileDragging: true,
       waypoints: [
-          L.latLng(Number(source[0]), Number(source[1])),
-          L.latLng(Number(destination.lat), Number(destination.lon))
+        L.latLng(Number(source[1]), Number(source[0])),
+        L.latLng(Number(destination.lat), Number(destination.lon))
       ]
     });
 

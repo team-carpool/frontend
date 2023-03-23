@@ -4,10 +4,11 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-import {NgxLeafletLocateModule} from '@runette/ngx-leaflet-locate'
+import { NgxLeafletLocateModule } from '@runette/ngx-leaflet-locate'
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './models/angular-material/angular-material.module';
@@ -19,7 +20,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 
-import { LoadingInterceptor } from './interceptor/loading.interceptor'; 
+import { LoadingInterceptor } from './interceptor/loading.interceptor';
+import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.component'; 
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { LoadingInterceptor } from './interceptor/loading.interceptor';
     NotFoundComponent,
     SignInComponent,
     SpinnerComponent,
+    BottomSheetComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,8 @@ import { LoadingInterceptor } from './interceptor/loading.interceptor';
   providers: [
     {
       provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true
-    }
+    },
+    { provide: MatBottomSheetRef, useValue: {} },
   ],
   bootstrap: [AppComponent],
   entryComponents: [SignInComponent, SignUpComponent],

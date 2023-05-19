@@ -35,7 +35,7 @@ export class HomeScreenComponent implements OnInit {
 
   public route(){
     // draw user route
-    this.mapComp.getRoute(this.destination);
+    this.mapComp.getRoute("", this.destination);
 
     // post user data to travel_table
     let travel_data = {
@@ -46,14 +46,20 @@ export class HomeScreenComponent implements OnInit {
     this.travelService.sendUserTravelPlan(travel_data)?.subscribe((res)=>{
       console.log(res);
       
-      // get recommended co-passenger
+      // get recommended companion
       if(this.searchForm.get("isDriving")?.value==false) {
-        this.travelService.getDriver();
-        this._bottomSheet.open(BottomSheetComponent);
+        this.travelService.getDriver()?.subscribe((res)=>{
+          console.log(res);
+          this._bottomSheet.open(BottomSheetComponent, { data: res });
+        });
+        
       }
       else if(this.searchForm.get("isDriving")?.value==true) {
-        this.travelService.getPassenger();
-        this._bottomSheet.open(BottomSheetComponent);
+        this.travelService.getPassenger()?.subscribe((res)=>{
+          console.log(res);
+          this._bottomSheet.open(BottomSheetComponent, { data: res });
+        });
+        
       }
 
     });

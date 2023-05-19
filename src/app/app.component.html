@@ -9,7 +9,7 @@
   </div>
 
   <div class="flex">
-    <button *ngIf="!this.signinService.authenticate().isLoggedIn" class="nav-btn" mat-button (click)="openDialog()">Sign Up</button>
+    <button *ngIf="!this.signinService.authenticate().isLoggedIn" class="nav-btn" mat-button (click)="openDialog()">Sign In</button>
     <div *ngIf="this.signinService.authenticate().isLoggedIn">{{this.signinService.authenticate().email}}</div>
     <button class="nav-btn" mat-button routerLink="/about">About</button>
     <button *ngIf="this.signinService.authenticate().isLoggedIn" class="nav-btn" mat-button (click)="logout()">Logout</button>

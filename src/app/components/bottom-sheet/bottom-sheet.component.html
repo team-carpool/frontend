@@ -1,13 +1,13 @@
+<p>Hi this is ceo of carpool!!! Hello {{data[0].sourceCoord}} </p>
 <mat-stepper [linear]="isLinear" #stepper>
     <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
-            <ng-template matStepLabel>Fill out your name</ng-template>
-            <mat-form-field appearance="fill">
-                <mat-label>Name</mat-label>
-                <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-            </mat-form-field>
+            <ng-template matStepLabel>Available Co-Passenger </ng-template>
+            <div *ngFor="let companion of data" >
+                <i class='large material-icons' (click)="addRoute(companion.sourceCoord, companion.destinationCoord)">person</i>
+            </div>
             <div>
-                <button mat-button matStepperNext>Next</button>
+                <button mat-button (click)="removeRoute()">Next</button>
             </div>
         </form>
     </mat-step>

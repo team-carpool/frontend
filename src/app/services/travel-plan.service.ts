@@ -45,20 +45,14 @@ export class TravelPlanService {
     this.token = this.signinService.authenticate();
     if(this.token.isLoggedIn==undefined || this.token.isLoggedIn==false) return;
     let emailId = this.token.email;
-    this.httpClient.get('https://backend-carpool.onrender.com/travel/driver?user_email_id='+emailId)
-    .subscribe((res)=>{
-      console.log(res);
-    });
+    return this.httpClient.get('https://backend-carpool.onrender.com/travel/driver?user_email_id='+emailId);
   }
 
   public getPassenger() {
     this.token = this.signinService.authenticate();
     if(this.token.isLoggedIn==undefined || this.token.isLoggedIn==false) return;
     let emailId = this.token.email;
-    this.httpClient.get('https://backend-carpool.onrender.com/travel/passenger?user_email_id='+emailId)
-    .subscribe((res)=>{
-      console.log(res);
-    });
+    return this.httpClient.get('https://backend-carpool.onrender.com/travel/passenger?user_email_id='+emailId);
   }
 
 }

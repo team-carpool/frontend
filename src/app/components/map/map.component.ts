@@ -114,7 +114,7 @@ export class MapComponent implements AfterViewInit  {
           serviceUrl: `https://router.project-osrm.org/route/v1/`
       }),
       // showAlternatives: true,
-      lineOptions: {extendToWaypoints: false, missingRouteTolerance: 0, styles: [{color: '#5ec717', weight: 7}]},
+      lineOptions: {extendToWaypoints: false, missingRouteTolerance: 0, styles: [{color: '#5ec717', weight: 3}]},
       fitSelectedRoutes: true,
       // altLineOptions: {extendToWaypoints: false, missingRouteTolerance: 0, styles: [{color: '#ed6852', weight: 7}]},
       // show: false,

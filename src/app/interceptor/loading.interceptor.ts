@@ -15,7 +15,7 @@ export class LoadingInterceptor implements HttpInterceptor {
   private totalRequests = 0;
   private noLoaderUrl: Array<String> = [
     "https://nominatim.openstreetmap.org/search",
-    "http://localhost:8080/travel/currentloc",
+    "https://backend-carpool.onrender.com/user/currentloc",
   ]
 
 

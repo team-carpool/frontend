@@ -20,9 +20,10 @@ export class AppComponent implements OnInit {
 
   logout() {
     sessionStorage.removeItem("AUTH_TOKEN");
+    window.location.reload();
   }
 
   openDialog() {
-    this.dialog.open(SignUpComponent);
+    this.dialog.open(SignInComponent);
   }
 }

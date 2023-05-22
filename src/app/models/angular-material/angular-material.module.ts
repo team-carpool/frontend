@@ -21,6 +21,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatStepperModule } from '@angular/material/stepper';
 
 @NgModule({
   declarations: [],
@@ -45,6 +47,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatSnackBarModule,
     MatTreeModule,
     MatDialogModule,
+    MatBottomSheetModule,
+    MatStepperModule,
   ],
   exports: [
     MatSliderModule,
@@ -66,6 +70,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatSnackBarModule,
     MatTreeModule,
     MatDialogModule,
+    MatBottomSheetModule,
+    MatStepperModule,
   ],
 })
 export class AngularMaterialModule {}

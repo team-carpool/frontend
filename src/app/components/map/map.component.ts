@@ -71,6 +71,10 @@ export class MapComponent implements AfterViewInit  {
   }
 
   public getRoute(sourceStr: string, destination: any){
+    if(this.routeData!=undefined) {
+      this.routeData.remove();
+    }
+
     if(sourceStr==="") {
       var source = this.currentUserCoord.split(",");
     }

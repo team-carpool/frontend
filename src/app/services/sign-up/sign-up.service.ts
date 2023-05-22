@@ -9,7 +9,7 @@ export class SignUpService {
   constructor(private httpClient: HttpClient) {}
 
   signUp(signup: UserSignup) {
-    console.log(signup);
+    // console.log(signup);
     return this.httpClient.post('https://backend-carpool.onrender.com/user/signup', signup);
   }
 }

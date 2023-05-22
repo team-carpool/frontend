@@ -12,3 +12,7 @@
     border-left: 2px solid red;
     padding: 3px;
 }
+
+.logo img {
+    content: url(../assets/logo.png);
+}

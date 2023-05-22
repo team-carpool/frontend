@@ -8,3 +8,7 @@
 .justify-center {
     display: flex;
 }
+
+.logo img {
+    content: url(../../../assets/logo.png);
+}

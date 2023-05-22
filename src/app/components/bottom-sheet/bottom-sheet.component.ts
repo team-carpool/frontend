@@ -1,7 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import { MAT_BOTTOM_SHEET_DATA } from '@angular/material/bottom-sheet';
-import { MapComponent } from '../map/map.component';
 
 @Component({
   selector: 'app-bottom-sheet',
@@ -26,11 +25,11 @@ export class BottomSheetComponent implements OnInit {
   }
 
   addRoute(src:string, des:string) {
-    this.mapComp.getCompanionRoute(src, des);
+    this.data.map.getCompanionRoute(src, des);
   }
 
   removeRoute(){
-    this.mapComp.removeCompanionRoute();
+    this.data.map.removeCompanionRoute();
   }
 
   

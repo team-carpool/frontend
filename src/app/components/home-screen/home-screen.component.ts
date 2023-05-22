@@ -50,14 +50,14 @@ export class HomeScreenComponent implements OnInit {
       if(this.searchForm.get("isDriving")?.value==false) {
         this.travelService.getDriver()?.subscribe((res)=>{
           console.log(res);
-          this._bottomSheet.open(BottomSheetComponent, { data: res });
+          this._bottomSheet.open(BottomSheetComponent, { data: {main:res, map:this.mapComp} });
         });
         
       }
       else if(this.searchForm.get("isDriving")?.value==true) {
         this.travelService.getPassenger()?.subscribe((res)=>{
           console.log(res);
-          this._bottomSheet.open(BottomSheetComponent, { data: res });
+          this._bottomSheet.open(BottomSheetComponent, { data: {main:res, map:this.mapComp} }); 
         });
         
       }

@@ -1,9 +1,9 @@
-<p>Hi this is ceo of carpool!!! Hello {{data[0].sourceCoord}} </p>
+<p>Hi this is ceo of carpool!!! Hello {{data.main[0].sourceCoord}} </p>
 <mat-stepper [linear]="isLinear" #stepper>
     <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
             <ng-template matStepLabel>Available Co-Passenger </ng-template>
-            <div *ngFor="let companion of data" >
+            <div *ngFor="let companion of data.main" >
                 <i class='large material-icons' (click)="addRoute(companion.sourceCoord, companion.destinationCoord)">person</i>
             </div>
             <div>

@@ -102,6 +102,10 @@ export class MapComponent implements AfterViewInit  {
   }
 
   public getCompanionRoute(sourceStr: string, destinationStr: string){
+    if(this.companionRouteData!=undefined) {
+      this.removeCompanionRoute();
+    }
+
     var source = sourceStr.split(",");
     var destination = destinationStr.split(",");
 
@@ -110,7 +114,7 @@ export class MapComponent implements AfterViewInit  {
           serviceUrl: `https://router.project-osrm.org/route/v1/`
       }),
       // showAlternatives: true,
-      // lineOptions: {extendToWaypoints: false, missingRouteTolerance: 0, styles: [{color: '#242c81', weight: 7}]},
+      lineOptions: {extendToWaypoints: false, missingRouteTolerance: 0, styles: [{color: '#5ec717', weight: 7}]},
       fitSelectedRoutes: true,
       // altLineOptions: {extendToWaypoints: false, missingRouteTolerance: 0, styles: [{color: '#ed6852', weight: 7}]},
       // show: false,

@@ -1,23 +1,24 @@
-<p>Hi this is ceo of carpool!!! Hello {{data.main[0].sourceCoord}} </p>
+<!-- <p>Hi this is ceo of carpool!!! Hello {{data.main[0].sourceCoord}} </p> -->
 <mat-stepper [linear]="isLinear" #stepper>
     <mat-step [stepControl]="firstFormGroup">
-        <form [formGroup]="firstFormGroup">
+        <form [formGroup]="firstFormGroup" class="flex">
             <ng-template matStepLabel>Available Co-Passenger </ng-template>
-            <div *ngFor="let companion of data.main" >
-                <i class='large material-icons' (click)="addRoute(companion.sourceCoord, companion.destinationCoord)">person</i>
-            </div>
-            <div>
-                <button mat-button (click)="removeRoute()">Next</button>
+            <div class="p-10 bg-green-300 m-4 rounded-lg" *ngFor="let companion of data.main; let i=index" >
+               <strong (click)="addRoute(companion.sourceCoord, companion.destinationCoord)" class="p-10 cursor-pointer" > <i class='large material-icons' (click)="addRoute(companion.sourceCoord, companion.destinationCoord)">person</i> <p>Passenger {{i +1}}</p> </strong>
             </div>
         </form>
+        <div class="block">
+            <button mat-button matStepperNext>Next</button>
+        </div>
     </mat-step>
-    <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+    <mat-step [stepControl]="secondFormGroup" label="You have been paired">
         <form [formGroup]="secondFormGroup">
-            <mat-form-field appearance="fill">
-                <mat-label>Address</mat-label>
+            <!-- <mat-form-field appearance="fill">
+                <mat-label>Yeah You Got paired</mat-label>
                 <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                        required>
-            </mat-form-field>
+                        required> 
+            </mat-form-field> -->
+            <p><strong>Yeah You Got paired</strong></p>
             <div>
                 <button mat-button matStepperPrevious>Back</button>
                 <button mat-button matStepperNext>Next</button>
@@ -25,10 +26,10 @@
         </form>
     </mat-step>
     <mat-step>
-        <ng-template matStepLabel>Done</ng-template>
-        <p>You are now done.</p>
+        <ng-template matStepLabel>Cancel Ride</ng-template>
+        <p>Really wanna cancel ride?</p>
         <div>
-            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperPrevious>No</button>
             <button mat-button (click)="stepper.reset()">Reset</button>
         </div>
     </mat-step>

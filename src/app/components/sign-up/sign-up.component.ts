@@ -16,6 +16,9 @@ export class SignUpComponent implements OnInit {
     emailId: '',
     password: '',
   };
+  email_regex = "r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b'"
+
+  errorMessage: string = '';
 
   constructor(
     private signupService: SignUpService,
@@ -29,9 +32,30 @@ export class SignUpComponent implements OnInit {
     this.dialog.open(SignInComponent);
   }
 
+  validateEmail(email: string): boolean {
+    const emailRegex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/;
+    return emailRegex.test(email);
+  }
+
+
   onSubmit() {
-    this.signupService.signUp(this.signup).subscribe((data) => {
-      console.log(data);
-    });
+    if (this.signup.emailId === '') {
+      alert('Please enter your email address');
+    } else if (this.signup.password === '') {
+      alert('Please enter your password');
+    } else if (!this.validateEmail(this.signup.emailId)) {
+      alert('Please enter a valid email address');
+    } else {
+      this.signupService.signUp(this.signup).subscribe((data) => {
+        console.log(data);
+        if(data === "USER_CREATED_SUCCESSFULLY") {
+          this.openDialog();
+        } else {
+          console.log(data);
+          this.errorMessage = data.toString();
+        }
+      }
+      );
+    }
   }
 }

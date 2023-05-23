@@ -1,23 +1,24 @@
-<p>Hi this is ceo of carpool!!! Hello {{data.main[0].sourceCoord}} </p>
+<!-- <p>Hi this is ceo of carpool!!! Hello {{data.main[0].sourceCoord}} </p> -->
 <mat-stepper [linear]="isLinear" #stepper>
     <mat-step [stepControl]="firstFormGroup">
-        <form [formGroup]="firstFormGroup">
+        <form [formGroup]="firstFormGroup" class="flex">
             <ng-template matStepLabel>Available Co-Passenger </ng-template>
-            <div *ngFor="let companion of data.main" >
-                <i class='large material-icons' (click)="addRoute(companion.sourceCoord, companion.destinationCoord)">person</i>
-            </div>
-            <div>
-                <button mat-button matStepperNext (click)="removeRoute()">Next</button>
+            <div class="p-10 bg-green-300 m-4 rounded-lg" *ngFor="let companion of data.main; let i=index" >
+               <strong (click)="addRoute(companion.sourceCoord, companion.destinationCoord)" class="p-10 cursor-pointer" > <i class='large material-icons' (click)="addRoute(companion.sourceCoord, companion.destinationCoord)">person</i> <p>Passenger {{i +1}}</p> </strong>
             </div>
         </form>
+        <div class="block">
+            <button mat-button matStepperNext>Next</button>
+        </div>
     </mat-step>
     <mat-step [stepControl]="secondFormGroup" label="You have been paired">
         <form [formGroup]="secondFormGroup">
-            <mat-form-field appearance="fill">
+            <!-- <mat-form-field appearance="fill">
                 <mat-label>Yeah You Got paired</mat-label>
-                <!-- <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                        required> -->
-            </mat-form-field>
+                <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                        required> 
+            </mat-form-field> -->
+            <p><strong>Yeah You Got paired</strong></p>
             <div>
                 <button mat-button matStepperPrevious>Back</button>
                 <button mat-button matStepperNext>Next</button>

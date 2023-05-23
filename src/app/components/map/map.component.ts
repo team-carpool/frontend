@@ -41,7 +41,7 @@ export class MapComponent implements AfterViewInit  {
 
   private initMap(): void {
     this.map = L.map('map', {
-      center: [ 25.6370210, 85.9089743 ],
+      center: [ 22.5726, 88.3639 ],
       zoom: 13
     });
 
@@ -71,6 +71,10 @@ export class MapComponent implements AfterViewInit  {
   }
 
   public getRoute(sourceStr: string, destination: any){
+    if(this.routeData!=undefined) {
+      this.routeData.remove();
+    }
+
     if(sourceStr==="") {
       var source = this.currentUserCoord.split(",");
     }

@@ -7,16 +7,16 @@
                 <i class='large material-icons' (click)="addRoute(companion.sourceCoord, companion.destinationCoord)">person</i>
             </div>
             <div>
-                <button mat-button (click)="removeRoute()">Next</button>
+                <button mat-button matStepperNext (click)="removeRoute()">Next</button>
             </div>
         </form>
     </mat-step>
-    <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+    <mat-step [stepControl]="secondFormGroup" label="You have been paired">
         <form [formGroup]="secondFormGroup">
             <mat-form-field appearance="fill">
-                <mat-label>Address</mat-label>
-                <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                        required>
+                <mat-label>Yeah You Got paired</mat-label>
+                <!-- <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                        required> -->
             </mat-form-field>
             <div>
                 <button mat-button matStepperPrevious>Back</button>
@@ -25,10 +25,10 @@
         </form>
     </mat-step>
     <mat-step>
-        <ng-template matStepLabel>Done</ng-template>
-        <p>You are now done.</p>
+        <ng-template matStepLabel>Cancel Ride</ng-template>
+        <p>Really wanna cancel ride?</p>
         <div>
-            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperPrevious>No</button>
             <button mat-button (click)="stepper.reset()">Reset</button>
         </div>
     </mat-step>
